@@ -2,15 +2,107 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
-    header {
-        background-image: ;
-    }
 }
+
+header {
+    background-image: url("img/escola.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+    background-attachment: scroll;
+    height: 200px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+header img {
+    border-radius: 50%;
+    height: 170px;
+    width: 170px;
+}
+
+h1 {
+    font-size: 10em;
+    collor: yellow;
+}
+
+h2,
+h3 {
+    text-align: center;
+}
+
+h2 {
+    color: green;
+    font-size: 60px;
+}
+
+h3 {
+    color: orangered;
+    font-size: 50px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+}
+
+li {
+    color: black;
+    font-size: 40px;
+}
+
+label,
+button {
+    font-size: 30px;
+}
+
+form h3 {
+    color: red;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+}
+
+section img {
+    height: 200px;
+    width: 250px;
+    margin-left: 40px;
+    margin-top: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    display: block;
+}
+
+form div {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    
+}
+figure input {
+    padding: 15px 32px;
+    border: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    color: white;
+    background-color: green;
+
+}
+
+
+
 body {
-    font-family: "Encode Sans", serif;
+    font-family: "Encode Sans" serif;
 }
 
-@media (min-width: 1025px) {
-
-}
+@media (min-width: 1025px) {}
