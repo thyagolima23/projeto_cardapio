@@ -18,13 +18,13 @@ import cardapio from './dados.js';
 </section>
 */
 
-const main = document.querySelector('main'); //Selecioinar a tag main
+const main = document.querySelector('main'); //Selecionar a tag main
 main.innerHTML="<h2> Cardapio do Dia</h2>";
 //a lista no JS começar no zero
 const diaDaSemana=['domingo','segunda-feira', 'terça-feira', 'quarta-feira', 'quinta-feira', 'sexta-feira', 'sabado-letivo']
 const hoje=new Date().getDay();
 //Date informa a data e o getDay()informa qual dos >(0-6)
-const diaAtual = diaDaSemana[hoje]
+const diaAtual = diaDaSemana[hoje];
 const menuDoDia = cardapio.find(menu => menu.dia===diaAtual); // Verifica nos dados se tem aquele dia na lista
 
 if(menuDoDia) {
