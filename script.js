@@ -67,3 +67,38 @@ fetchPratosApi();
 
 // Atualiza a cada minuto
 setInterval(fetchPratosApi, 60000);
+
+document.querySelector("form").addEventListener("submit", async function(event) {
+    event.preventDefault(); // Impede o envio tradicional do formulário
+
+    let respostaElement = document.querySelector('input[name="radio"]:checked');
+    if (!respostaElement) {
+        alert("Escolha uma opção antes de enviar.");
+        return;
+    }
+
+    let resposta = respostaElement.value;
+    let pratoId = 123; // Defina dinamicamente se necessário
+
+    // Capturar o IP do usuário via API pública
+    let ipResponse = await fetch("https://api64.ipify.org?format=json");
+    let ipData = await ipResponse.json();
+    let ip = ipData.ip;
+
+    let data = {
+        resposta: resposta,
+        pratoId: pratoId,
+        ip: ip
+    };
+
+    fetch("http://localhost:3000/votacao", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(data => console.log("Voto registrado:", data))
+    .catch(error => console.error("Erro ao enviar voto:", error));
+});
