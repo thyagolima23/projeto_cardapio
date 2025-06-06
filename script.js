@@ -62,7 +62,7 @@ function exibirResultado(cardapios) {
 
     console.log(`Hoje é ${nomeDoDia} e o cardápio é: ${prato.principal}`);
   } else {
-    main.textContent = 'Hoje não temos cardápio disponível.';
+    main.innerHTML = <h2>'Hoje não temos cardápio disponível.';</h2>
   }
 }
 
